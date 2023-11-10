@@ -9,18 +9,15 @@ public class Main {
 		
 		int L = Integer.parseInt(br.readLine());
 		String str = br.readLine();
-		
-		System.out.println(hashing(str));
-		
-	}
-	
-	public static int hashing(String str) {
-		String[] arr = str.split("");
-		int result = 0;
-		for(int i=0;i<str.length();i++) {
-			result += (str.charAt(i) - 96) * Math.pow(31, i);
+		long result = 0;
+		long pow = 1;
+		for(int i=0;i<L;i++) {
+			result += (str.charAt(i) - 96) * pow;
+			pow = (pow * 31) % 1234567891;
 		}
-		return result;
+		
+		System.out.println(result % 1234567891);
+		
 	}
 
 }
