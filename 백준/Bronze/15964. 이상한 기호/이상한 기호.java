@@ -11,14 +11,14 @@ public class Main {
 		
 		String[] str = br.readLine().split(" ");
 		
-		int a = Integer.parseInt(str[0]);
-		int b = Integer.parseInt(str[1]);
+		Long a = Long.parseLong(str[0]);
+		Long b = Long.parseLong(str[1]);
 		
 		System.out.println(func(a,b));
 		
 	}
 	
-	private static int func(int a, int b) {
+	private static Long func(Long a, Long b) {
 		return (a+b) * (a-b);
 	}
 }
