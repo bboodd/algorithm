@@ -19,11 +19,11 @@ public class Main {
 
         arr = new int[m];
 
-        dfs(0);
+        dfs(1, 0);
         System.out.print(sb);
     }
 
-    public static void dfs(int depth){
+    public static void dfs(int at, int depth){
 
         if(depth == m){
             for(int i=0;i<m;i++){
@@ -33,17 +33,9 @@ public class Main {
             return;
         }
 
-        for(int i=1;i<=n;i++){
-
-            if(depth >= 1){
-                if(arr[depth-1] <= i){
-                    arr[depth] = i;
-                    dfs(depth + 1);
-                }
-            } else{
-                arr[depth] = i;
-                dfs(depth + 1);
-            }
+        for(int i=at;i<=n;i++){
+            arr[depth] = i;
+            dfs(i, depth + 1);
         }
     }
 }
