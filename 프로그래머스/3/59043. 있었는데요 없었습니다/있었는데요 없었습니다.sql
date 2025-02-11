@@ -1,0 +1,7 @@
+-- 코드를 입력하세요
+SELECT a_in.ANIMAL_ID, a_in.NAME
+FROM ANIMAL_INS a_in
+    JOIN ANIMAL_OUTS a_out
+        ON a_in.ANIMAL_ID = a_out.ANIMAL_ID
+WHERE a_in.DATETIME > a_out.DATETIME
+ORDER BY a_in.DATETIME ASC
